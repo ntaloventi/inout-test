@@ -1,0 +1,11 @@
+[Unit]
+Description=In Out PTEN Python Script
+
+[Service]
+ExecStart=/usr/bin/python3 /d/BashProjects/ftp_docker.py
+Restart=always
+User=ntaloventi
+WorkingDirectory=/d/BashProjects
+
+[Install]
+WantedBy=default.target
