@@ -1,1 +1,5 @@
-docker run -d -p 21:21 -e USERS="one|1234" -e ADDRESS=ftp.iqbal.cool delfer/alpine-ftp-server
+docker run -d --name ftpd_server -p 21:21 -p 30000-30009:30000-30009 -e "PUBLICHOST=localhost" -e "ADDED_FLAGS=-d -d" stilliard/pure-ftpd:hardened
+
+docker exec -it ftpd_server sh -c "export TERM=xterm && bash"
+
+pure-pw useradd bob -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /home/ftpusers/bob
