@@ -1,0 +1,11 @@
+2023-10-18 04:43:51,717 - INFO - ftp connected
+2023-10-18 04:43:51,733 - INFO - upload file: /input/hello copy.txt
+2023-10-18 04:43:51,742 - INFO - upload file: /input/hello.txt
+2023-10-18 04:43:51,753 - INFO - download file: check.txt
+2023-10-18 04:43:51,763 - INFO - download file: note.txt
+2023-10-18 04:44:47,977 - INFO - ftp connected
+2023-10-18 04:44:47,995 - INFO - upload file: /input/hello copy.txt
+2023-10-18 04:44:48,006 - INFO - upload file: /input/hello.txt
+2023-10-18 04:44:48,019 - INFO - download file: check.txt
+2023-10-18 04:44:48,028 - INFO - download file: note.txt
+2023-10-18 04:44:48,039 - INFO - download file: other files.txt
