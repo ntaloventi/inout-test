@@ -1,0 +1,47 @@
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/in
+sftp>     # Upload a local file as new name
+sftp>     put hello.txt uploaded_hello_20231017_220901.txt
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/out
+sftp>     # Download a remote file as new name
+sftp>     get hello_out.txt downloaded_hello_20231017_220901.txt
+sftp>     # Exit SFTP session
+sftp>     bye
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/in
+sftp>     # Upload a local file as new name
+sftp>     put hello.txt uploaded_hello_20231017_221315.txt
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/out
+sftp>     # Download a remote file as new name
+sftp>     get hello_out.txt downloaded_hello_20231017_221315.txt
+sftp>     # List download folder
+sftp>     pwd
+Remote working directory: /home/ntaloventi/wslfolder/out
+sftp>     ls -alh
+drwxr-xr-x    ? ntaloventi ntaloventi     4.0K Oct 17 21:48 .
+drwxr-xr-x    ? ntaloventi ntaloventi     4.0K Oct 17 21:46 ..
+-rw-r--r--    ? ntaloventi ntaloventi       4B Oct 17 21:48 hello_out.txt
+sftp>     # Exit SFTP session
+sftp>     bye
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/in
+sftp>     # Upload a local file as new name
+sftp>     put /d/BashProjects/out/hello.txt uploaded_hello_20231017_222225.txt
+sftp>     # Change to remote directory
+sftp>     # cd /home/ntaloventi/wslfolder/out
+sftp>     # Download a remote file as new name
+sftp>     # get hello_out.txt downloaded_hello_20231017_222225.txt
+sftp>     # List download folder
+sftp>     # pwd
+sftp>     # ls -alh
+sftp>     # Exit SFTP session
+sftp>     bye
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/in
+sftp>     # Upload a local file as new name
+sftp>     put /d/BashProjects/out/hello.txt uploaded_hello_20231017_222723.txt
+sftp>     # Change to remote directory
+sftp>     cd /home/ntaloventi/wslfolder/out
+sftp>     LIST="total 12
