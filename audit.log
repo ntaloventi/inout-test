@@ -1,11 +1,21 @@
-2023-10-18 04:43:51,717 - INFO - ftp connected
-2023-10-18 04:43:51,733 - INFO - upload file: /input/hello copy.txt
-2023-10-18 04:43:51,742 - INFO - upload file: /input/hello.txt
-2023-10-18 04:43:51,753 - INFO - download file: check.txt
-2023-10-18 04:43:51,763 - INFO - download file: note.txt
-2023-10-18 04:44:47,977 - INFO - ftp connected
-2023-10-18 04:44:47,995 - INFO - upload file: /input/hello copy.txt
-2023-10-18 04:44:48,006 - INFO - upload file: /input/hello.txt
-2023-10-18 04:44:48,019 - INFO - download file: check.txt
-2023-10-18 04:44:48,028 - INFO - download file: note.txt
-2023-10-18 04:44:48,039 - INFO - download file: other files.txt
+2023-10-18 11:42:56,723 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-10-18 11:42:57,118 - INFO - Authentication (password) successful!
+2023-10-18 11:42:57,263 - INFO - [chan 0] Opened sftp connection (server version 3)
+2023-10-18 11:42:57,402 - INFO - upload file: /mnt/d/GithubArea/inout-test/source_out/cz_ouput_20231018.xls as: /mnt/pten/PTEN_OUT/20231018-114256_cz_ouput_20231018.xls
+2023-10-18 11:42:57,529 - INFO - download file: /mnt/pten/PTEN_OUT/will_download_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-114256_will_download_20231018.xls
+2023-10-18 11:42:57,622 - INFO - download file: /mnt/pten/PTEN_OUT/20231018-114256_cz_ouput_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-114256_20231018-114256_cz_ouput_20231018.xls
+2023-10-18 11:42:57,623 - INFO - [chan 0] sftp session closed.
+2023-10-18 11:47:39,158 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-10-18 11:47:39,541 - INFO - Authentication (password) successful!
+2023-10-18 11:47:39,718 - INFO - [chan 0] Opened sftp connection (server version 3)
+2023-10-18 11:47:39,864 - INFO - upload file: /mnt/d/GithubArea/inout-test/source_out/cz_ouput_20231018.xls as: /mnt/pten/PTEN_IN/20231018-114739_cz_ouput_20231018.xls
+2023-10-18 11:47:39,983 - INFO - download file: /mnt/pten/PTEN_OUT/will_download_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-114739_will_download_20231018.xls
+2023-10-18 11:47:40,296 - INFO - download file: /mnt/pten/PTEN_OUT/will_download02_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-114739_will_download02_20231018.xls
+2023-10-18 11:47:40,297 - INFO - [chan 0] sftp session closed.
+2023-10-18 11:50:32,446 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-10-18 11:50:33,102 - INFO - Authentication (password) successful!
+2023-10-18 11:50:33,246 - INFO - [chan 0] Opened sftp connection (server version 3)
+2023-10-18 11:50:33,364 - INFO - upload file: /mnt/d/GithubArea/inout-test/source_out/cz_ouput_20231018.xls as: /mnt/pten/PTEN_IN/20231018-115032_cz_ouput_20231018.xls
+2023-10-18 11:50:33,476 - INFO - download file: /mnt/pten/PTEN_OUT/will_download_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-115032_will_download_20231018.xls
+2023-10-18 11:50:33,562 - INFO - download file: /mnt/pten/PTEN_OUT/will_download02_20231018.xls as: /mnt/d/GithubArea/inout-test/dest_in/20231018-115032_will_download02_20231018.xls
+2023-10-18 11:50:33,563 - INFO - [chan 0] sftp session closed.

@@ -1,44 +1,49 @@
 import os
+import logging
 import paramiko
+from datetime import datetime
 
-def listContents(path):
-    try:
-        # List all files in the specified folder
-        files = os.listdir(path)
+# Configure logging
+logging.basicConfig(
+    filename='audit.log',
+    level=logging.INFO,  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
-        # Print the list of files
-        print(f"Files in {path}:")
-        for file in files:
-            print(file)
-
-    except FileNotFoundError:
-        print(f"Error: Folder not found - {path}")
-    except PermissionError:
-        print(f"Error: Permission denied to access - {path}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-def sftp_upload(local_path, remote_path, hostname, username, private_key_path, key_password, port=2323):
+def sftp_upload(remote_upload, remote_download, source_upload, dest_download, hostname, username, password, port=22):
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     # Create an SSH client
+    # paramiko.util.log_to_file('paramiko.log')
     ssh = paramiko.SSHClient()
 
     # Automatically add the server's host key (this is insecure and should be avoided in production)
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     try:
-        # Connect to the server using the private key and key password
-        ssh.connect(hostname, port, username, key_filename=private_key_path, password=key_password)
-
-        # Create an SFTP client
+        ssh.connect(hostname, port, username, password)
         sftp = ssh.open_sftp()
 
-        try:
-            # Upload the file
-            sftp.put(local_path, remote_path)
-            print(f"File uploaded successfully: {local_path} to {remote_path}")
-        finally:
-            # Close the SFTP session
-            sftp.close()
+        # List source_out folder
+        fileUploads = os.listdir(source_upload)
+
+        # uploading loop
+        for fileUp in fileUploads:
+            sc = os.path.join(source_upload, fileUp)
+            ds = os.path.join(remote_upload, timestamp + '_' + fileUp)
+            sftp.put(sc, ds)
+            logging.info('upload file: ' + sc + ' as: ' + ds)
+
+        # List PTEN_OUT folder
+        filesDownloads = sftp.listdir(remote_download)
+
+        # print 
+        for fileDw in filesDownloads:
+            sc = os.path.join(remote_download, fileDw)
+            ds = os.path.join(dest_download, timestamp + '_' + fileDw)
+            sftp.get(sc, ds)
+            logging.info('download file: ' + sc + ' as: ' + ds)
+        
+        sftp.close()
 
     except Exception as e:
         print(f"Error: {e}")
@@ -47,14 +52,14 @@ def sftp_upload(local_path, remote_path, hostname, username, private_key_path, k
         # Close the SSH connection
         ssh.close()
 
-# Example usage
-# listContents(os.getcwd() + "/out")
+# Configuration
+remote_upload = '/mnt/pten/PTEN_IN'
+remote_download = '/mnt/pten/PTEN_OUT'
+source_upload = os.getcwd() + '/source_out'
+dest_download = os.getcwd() + '/dest_in'
 
-local_file_path = os.getcwd() + "/out/hello.txt"
-remote_file_path = '/home/ntaloventi/wslfolder/in/hello_out.txt'
-ftp_hostname = '15.0.0.11'
-ftp_username = 'ntaloventi'
-private_key_path = 'C:\\Users\\ntalo\\.ssh\\id_rsa'
-key_password = 'iamlove'
+hostname = '192.168.5.123'
+username = 'czftppten'
+password = 'C#3DompetCoklat'
 
-sftp_upload(local_file_path, remote_file_path, ftp_hostname, ftp_username, private_key_path, key_password)
+sftp_upload(remote_upload, remote_download, source_upload, dest_download, hostname, username, password)

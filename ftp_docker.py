@@ -1,6 +1,6 @@
 import os
-from datetime import datetime
 import logging
+from datetime import datetime
 from ftplib import FTP, error_perm
 
 # Configure logging
@@ -62,7 +62,7 @@ source_upload = os.getcwd() + '/source_out'
 dest_download = os.getcwd() + '/dest_in'
 
 ftp_hostname = 'ftp.iqbal.cool'
-ftp_username = 'bob'
+ftp_username = 'iqbal'
 ftp_password = 'iamlove'
 
 ftp_upload(remote_upload, remote_download, source_upload, dest_download, ftp_hostname, ftp_username, ftp_password)
