@@ -55,8 +55,8 @@ def sftp_upload(remote_upload, remote_download, source_upload, dest_download, ho
 # Configuration
 remote_upload = '/mnt/pten/PTEN_IN'
 remote_download = '/mnt/pten/PTEN_OUT'
-source_upload = os.getcwd() + '/source_out'
-dest_download = os.getcwd() + '/dest_in'
+source_upload = os.getcwd() + '/PTEN_IN'
+dest_download = os.getcwd() + '/PTEN_OUT'
 
 hostname = '192.168.5.123'
 username = 'czftppten'
